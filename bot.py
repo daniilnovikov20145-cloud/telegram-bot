@@ -109,14 +109,15 @@ async def buttons(message: types.Message):
 @dp.message()
 async def handle_unknown(message: types.Message):
     text = message.text
-
-    if text in [
-        "📩 Подати заявку на вакансію",
-        "❓ Задати питання",
-        "🌐 Вебсайт",
-        "📄 Детальніше про вакансію"
-    ]:  
-        return
+if text in [
+    "📄 Подати заявку на вакансію",
+    "ℹ️ Детальніше про вакансію",
+    "🌐 Вебсайт",
+    "👨‍💼 Задати питання консультанту"
+]:
+    return
+    
+        
 
     await message.answer(
         "Я бачу, що у тебе є запитання 😊\n\n"
