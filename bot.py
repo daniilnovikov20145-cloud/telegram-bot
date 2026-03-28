@@ -104,7 +104,7 @@ async def handle_unknown(message: types.Message):
         "❓ Задати питання",
         "🌐 Вебсайт",
         "📄 Детальніше про вакансію"
-    ]:
+    ]:  
         return
 
     await message.answer(
