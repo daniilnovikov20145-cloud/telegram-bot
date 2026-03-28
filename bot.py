@@ -41,7 +41,7 @@ dp = Dispatcher()
 
 main_kb = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="📝 Подати заявку на вакансію")],
+        [KeyboardButton(text="👉 Приєднатися до групи про вакансію")],
         [
             KeyboardButton(text="ℹ️ Детальніше про вакансію"),
             KeyboardButton(text="🌐 Вебсайт"),
@@ -82,14 +82,9 @@ async def start(message: types.Message):
     reply_markup=main_kb
 )
 
-@dp.message(F.text.in_([
-    "📄 Подати заявку на вакансію",
-    "ℹ️ Детальніше про вакансію",
-    "🌐 Вебсайт",
-    "👨‍💼 Задати питання консультанту"
-]))
+@dp.message()
 async def buttons(message: types.Message):
-    if message.text == "📝 Подати заявку на вакансію":
+    if "Приєднатися" in message.text:
         await message.answer(
             "Натисніть кнопку нижче щоб перейти в групу 🚀",
             reply_markup=group_kb
