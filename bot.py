@@ -95,7 +95,25 @@ async def buttons(message: types.Message):
             "Натисніть кнопку нижче щоб написати мені в особисті повідомлення 💬",
             reply_markup=personal_kb
         )
+@dp.message()
+async def handle_unknown(message: types.Message):
+    text = message.text
 
+    # игнорируем кнопки (чтобы не ломать логику)
+  if text in [
+    "📩 Подати заявку на вакансію",
+    "❓ Задати питання",
+    "🌐 Вебсайт",
+    "📄 Детальніше про вакансію"
+]:
+        return
+
+    await message.answer(
+        "Я бачу, що у тебе є запитання 😊\n\n"
+        "Щоб швидше знайти відповідь, обери, будь ласка, один із розділів нижче 👇\n\n"
+        "Або напиши мені особисто 👉 @vekluch — я з радістю допоможу",
+        reply_markup=main_kb
+    )
 async def main():
     await dp.start_polling(bot)
 
