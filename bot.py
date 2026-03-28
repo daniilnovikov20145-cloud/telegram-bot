@@ -65,13 +65,22 @@ website_kb = InlineKeyboardMarkup(
 
 personal_kb = InlineKeyboardMarkup(
     inline_keyboard=[
-        [InlineKeyboardButton(text="💬 Написати мені", url=PERSONAL_LINK)]
+        [InlineKeyboardButton(text="💬 Написати консультанту", url=PERSONAL_LINK)]
     ]
 )
 
 @dp.message(lambda message: message.text == "/start")
 async def start(message: types.Message):
-    await message.answer("Вітаємо в нашому боті 👋", reply_markup=main_kb)
+    await message.answer(
+    "Що вміє цей бот?\n\n"
+    "Для тих, хто шукає дистанційну роботу 🧑🏼‍💻\n"
+    "Пропонуємо актуальну вакансію, про яку детально розповідаємо під час Zoom-зустрічі 🤵‍♀️\n\n"
+    "• стабільний дохід 💰\n"
+    "• дистанційна робота 🏠\n"
+    "• підтримка на старті 🤝\n\n"
+    "Натискай «📝 Подати заявку на вакансію» та дізнайся більше 👇"
+    reply_markup=main_kb
+)
 
 @dp.message(lambda message: message.text in [
     "📄 Подати заявку на вакансію",
