@@ -99,13 +99,12 @@ async def buttons(message: types.Message):
 async def handle_unknown(message: types.Message):
     text = message.text
 
-    # игнорируем кнопки (чтобы не ломать логику)
-  if text in [
-    "📩 Подати заявку на вакансію",
-    "❓ Задати питання",
-    "🌐 Вебсайт",
-    "📄 Детальніше про вакансію"
-]:
+    if text in [
+        "📩 Подати заявку на вакансію",
+        "❓ Задати питання",
+        "🌐 Вебсайт",
+        "📄 Детальніше про вакансію"
+    ]:
         return
 
     await message.answer(
