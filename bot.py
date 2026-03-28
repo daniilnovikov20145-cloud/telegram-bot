@@ -82,12 +82,7 @@ async def start(message: types.Message):
     reply_markup=main_kb
 )
 
-@dp.message(lambda message: message.text in [
-    "📄 Подати заявку на вакансію",
-    "ℹ️ Детальніше про вакансію",
-    "🌐 Вебсайт",
-    "👨‍💼 Задати питання консультанту"
-])
+@dp.message()
 async def buttons(message: types.Message):
     if message.text == "📝 Подати заявку на вакансію":
         await message.answer(
