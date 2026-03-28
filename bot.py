@@ -106,9 +106,12 @@ async def buttons(message: types.Message):
     "Просто натисни кнопку нижче 👇",
     reply_markup=personal_kb
 )
-@dp.message()
+from aiogram import F
+
+@dp.message(F.text)
 async def handle_unknown(message: types.Message):
     text = message.text
+
     if text in [
         "📄 Подати заявку на вакансію",
         "ℹ️ Детальніше про вакансію",
