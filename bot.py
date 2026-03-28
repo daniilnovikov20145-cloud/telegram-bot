@@ -46,7 +46,7 @@ main_kb = ReplyKeyboardMarkup(
             KeyboardButton(text="ℹ️ Детальніше про вакансію"),
             KeyboardButton(text="🌐 Вебсайт"),
         ],
-        [KeyboardButton(text="❓ Задати питання")],
+        [KeyboardButton(text="👨‍💼 Задати питання консультанту")],
     ],
     resize_keyboard=True
 )
@@ -95,11 +95,13 @@ async def buttons(message: types.Message):
             reply_markup=website_kb
         )
 
-    elif message.text == "❓ Задати питання":
-        await message.answer(
-            "Натисніть кнопку нижче щоб написати мені в особисті повідомлення 💬",
-            reply_markup=personal_kb
-        )
+    elif message.text == "👨‍💼 Задати питання консультанту":
+       await message.answer(
+    "Зараз ти перейдеш до спеціаліста 🤵‍♀️\n\n"
+    "Він відповість на всі твої запитання та допоможе розібратись 🙌\n\n"
+    "Просто натисни кнопку нижче 👇",
+    reply_markup=personal_kb
+)
 @dp.message()
 async def handle_unknown(message: types.Message):
     text = message.text
