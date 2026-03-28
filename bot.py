@@ -73,7 +73,12 @@ personal_kb = InlineKeyboardMarkup(
 async def start(message: types.Message):
     await message.answer("Вітаємо в нашому боті 👋", reply_markup=main_kb)
 
-@dp.message()
+@dp.message(lambda message: message.text in [
+    "📩 Подати заявку на вакансію",
+    "❓ Задати питання",
+    "🌐 Вебсайт",
+    "📄 Детальніше про вакансію"
+])
 async def buttons(message: types.Message):
     if message.text == "📝 Подати заявку на вакансію":
         await message.answer(
