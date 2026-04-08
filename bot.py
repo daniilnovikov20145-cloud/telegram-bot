@@ -82,7 +82,12 @@ async def start(message: types.Message):
     reply_markup=main_kb
 )
 
-@dp.message()
+@dp.message(F.text.in_([
+    "Вступи до групи з інформацією про вакансію",
+    "ℹ️ Детальніше про вакансію",
+    "🌐 Вебсайт",
+    "👨‍💼 Задати питання консультанту"
+]))
 async def buttons(message: types.Message):
     if "Вступи до групи" in message.text:
         await message.answer(
