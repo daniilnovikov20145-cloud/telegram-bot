@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 
-TOKEN = "8212324861:AAHGxT5eIKx1q6TRghBpSxe4TPX5PTxAF40"
+TOKEN = "8212324861:AAFvOKm2lSmjj54LN3dX33gO4kJhzyiAHGs"
 
 GROUP_LINK = "https://t.me/+z3VEXtWslTVlYmEy"
 WEBSITE_LINK = "https://insightorba.com/"
