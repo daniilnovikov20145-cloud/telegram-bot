@@ -1,8 +1,9 @@
 import asyncio
+import os
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 
-TOKEN = "8212324861:AAFvOKm2lSmjj54LN3dX33gO4kJhzyiAHGs"
+TOKEN = os.getenv("TOKEN")
 
 GROUP_LINK = "https://t.me/+kGBIvh7yQQxhMmNi"
 WEBSITE_LINK = "https://insightorba.com/"
