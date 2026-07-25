@@ -139,6 +139,7 @@ async def handle_unknown(message: types.Message):
         reply_markup=main_kb
     )
 async def main():
+    await bot.delete_webhook(drop_pending_updates=False)
     await dp.start_polling(bot)
 
 asyncio.run(main())
