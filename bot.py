@@ -138,8 +138,31 @@ async def handle_unknown(message: types.Message):
         "Або напиши мені особисто 👉 @vekluch — я з радістю допоможу",
         reply_markup=main_kb
     )
+async def webhook_guard():
+    while True:
+        try:
+            webhook_info = await bot.get_webhook_info()
+
+            if webhook_info.url:
+                print(f"WARNING: Webhook detected: {webhook_info.url}")
+                await bot.delete_webhook(drop_pending_updates=False)
+                print("Webhook deleted automatically")
+
+        except Exception as e:
+            print(f"Webhook guard error: {e}")
+
+        await asyncio.sleep(60)
+
+
 async def main():
+    # Удаляем webhook при каждом запуске бота
     await bot.delete_webhook(drop_pending_updates=False)
+
+    # Запускаем постоянную защиту от webhook
+    asyncio.create_task(webhook_guard())
+
+    # Запускаем обычный polling
     await dp.start_polling(bot)
+
 
 asyncio.run(main())
