@@ -5,7 +5,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 
 TOKEN = os.getenv("TOKEN")
 
-GROUP_LINK = "https://t.me/+JnCUaoj2upY2ZTcy"
+GROUP_LINK = "https://t.me/+VwqIUaH4xfRlNTAy"
 WEBSITE_LINK = "https://insightorba.com/"
 PERSONAL_LINK = "https://t.me/vekluch"
 
@@ -38,7 +38,7 @@ VACANCY_TEXT = """
 Під час конференції ми детально розповімо про компанію та відповімо на всі питання 🙋
 
 Ось посилання на групу, де є вся інформація та буде доступ до зустрічі 👇
-https://t.me/+JnCUaoj2upY2ZTcy
+https://t.me/+VwqIUaH4xfRlNTAy
 """
 
 bot = Bot(token=TOKEN)
